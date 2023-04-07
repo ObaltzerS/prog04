@@ -10,6 +10,7 @@ Item::Item() {
 	this->id = -1;
 	this->name = "undefined";
 	this->price = 0.0;
+	this->next = NULL;
 }
 
 // Initializes id and name to given values.
@@ -25,6 +26,7 @@ Item::Item(int id, const string& name, float p) {
 	this->id = id;
 	this->name = name;
 	this->price = p;
+	this->next = NULL;
 }
 
 // return unique product ID as an integer

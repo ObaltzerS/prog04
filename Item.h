@@ -39,6 +39,8 @@ public:
 
 	int id;
 
+	Item* next;
+
 private:
 	std::string name;
 	float price;

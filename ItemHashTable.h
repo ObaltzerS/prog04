@@ -2,7 +2,6 @@
 #define ITEM_HASH_TABLE_HDR
 
 #include "Item.h"
-#include "ItemNode.h"
 
 // Define fixed maximum number of buckets in the hash table.
 // For this activity, we will implement a fixed-sized array where
@@ -18,7 +17,7 @@ public:
 	// pre-condition: receives an Item that must have a positive ID.
 	// post-condition: save the given Item into the hash table and return true
 	// if successful; else, false.
-	bool insert(const Item& V);
+	bool insert(Item& V);
 
 	// isContains
 	// pre-condition: receives an integer ID value. The integer ID is the
@@ -43,12 +42,10 @@ private:
 	// stored.
 	int hashFunction(int id) const;
 
-	Item* next;
-
 	int i;
 
 	// Fixed-sized array of Items. Each hash table bucket stores ONE Item.
-	ItemNode* buckets[NUMBER_OF_BUCKETS] = { NULL };
+	Item* buckets[NUMBER_OF_BUCKETS]{ NULL };
 };
 
 #endif
