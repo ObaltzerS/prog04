@@ -1,5 +1,5 @@
-#ifndef ITEM_HASH_TABLE_HDR
-#define ITEM_HASH_TABLE_HDR
+#ifndef ITEM_HASH_TABLE_LINEAR_HDR
+#define ITEM_HASH_TABLE_LINEAR_HDR
 
 #include "Item.h"
 
@@ -8,10 +8,10 @@
 // each entry or bucket of this fixed-sized array contains exactly ONE Item.
 #define NUMBER_OF_BUCKETS 20
 
-class ItemHashTable {
+class ItemHashTableLinear {
 public:
 	// constructor - initializes table to empty.
-	ItemHashTable();
+	ItemHashTableLinear();
 
 	// insert
 	// pre-condition: receives an Item that must have a positive ID.
@@ -45,7 +45,7 @@ private:
 	int i;
 
 	// Fixed-sized array of Items. Each hash table bucket stores ONE Item.
-	Item* buckets[NUMBER_OF_BUCKETS]{ NULL };
+	Item buckets[NUMBER_OF_BUCKETS];
 };
 
 #endif

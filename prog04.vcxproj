@@ -128,13 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Item.h" />
-    <ClInclude Include="ItemHashTable.h" />
-    <ClInclude Include="ItemNode.h" />
+    <ClInclude Include="ItemHashTableLinear.h" />
+    <ClInclude Include="ItemHashTableLinked.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Item.cpp" />
-    <ClCompile Include="ItemHashTable.cpp" />
-    <ClCompile Include="ItemNode.cpp" />
+    <ClCompile Include="ItemHashTableLinear.cpp" />
+    <ClCompile Include="ItemHashTableLinked.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

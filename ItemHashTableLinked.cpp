@@ -1,17 +1,16 @@
 #include "Item.h"
-#include "ItemHashTable.h"
-#include "ItemNode.h"
+#include "ItemHashTableLinked.h"
 #include <iostream>
 using namespace std;
 
 // constructor - initializes table to empty.
-ItemHashTable::ItemHashTable() {
-	this->buckets[NUMBER_OF_BUCKETS];
+ItemHashTableLinked::ItemHashTableLinked() {
+	Item buckets[NUMBER_OF_BUCKETS];
 
 }
 
 
-int ItemHashTable::hashFunction(int id) const {
+int ItemHashTableLinked::hashFunction(int id) const {
 	// Compute hash function using the modulo operator
 	int hashedID = (id % NUMBER_OF_BUCKETS);
 	// return computed hash value
@@ -20,7 +19,7 @@ int ItemHashTable::hashFunction(int id) const {
 }
 
 
-bool ItemHashTable::insert(Item& V) {
+bool ItemHashTableLinked::insert(Item& V) {
 
 	if (V.getId() > 0) {
 		Item* newNode = &V;
@@ -39,10 +38,10 @@ bool ItemHashTable::insert(Item& V) {
 		}
 		return false;
 	}
-
+	return false;
 }
 
-bool ItemHashTable::isContains(int id) const {
+bool ItemHashTableLinked::isContains(int id) const {
 
 
 	Item* current = buckets[hashFunction(id)];
@@ -62,7 +61,7 @@ bool ItemHashTable::isContains(int id) const {
 // post-condition: return Item matching the given ID.
 // Item will contain invalid values of id -1 and name "undefined" and price of 0
 // if not Item in the hash table has the given ID.
-Item ItemHashTable::retrieve(int ID) {
+Item ItemHashTableLinked::retrieve(int ID) {
 	Item empty = Item();
 
 	Item* current = buckets[hashFunction(ID)];
